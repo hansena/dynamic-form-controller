@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { Formik } from "formik";
 import withStyles from "@material-ui/core/styles/withStyles";
-import { DemoForm } from "./demoForm";
+import { FormPresentation } from "./FormPresentation";
 import Paper from "@material-ui/core/Paper";
-import { styles } from "./demoForm.css.js";
-import { formShape, validationSchema } from "./formShape";
+import { styles } from "./FormPresentation.css.js";
 
 class InputForm extends Component {
   constructor(props) {
@@ -18,7 +17,7 @@ class InputForm extends Component {
   };
 
   render() {
-    const { classes } = this.props;
+    const { classes, shape, validationSchema } = this.props;
     return (
       <React.Fragment>
         <div className={classes.container}>
@@ -27,12 +26,12 @@ class InputForm extends Component {
             <Formik
               onSubmit={this.onSubmit}
               render={props => (
-                <DemoForm
+                <FormPresentation
                   {...props}
                   classes={classes}
                   debug
                   handleSubmit={this.handleSubmission}
-                  shape={formShape}
+                  shape={shape}
                 />
               )}
               validationSchema={validationSchema}
@@ -44,4 +43,4 @@ class InputForm extends Component {
   }
 }
 
-export default withStyles(styles)(InputForm);
+export default withStyles(styles, { index: 1 })(InputForm);

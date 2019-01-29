@@ -1,13 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import InputForm from "./InputForm/index.js";
+import InputForm from "./InputForm/InputForm";
+import { shape, validationSchema } from "./configuration.js";
 
 import "./styles.css";
 
 function App() {
   return (
     <div className="App">
-      <InputForm />
+      <InputForm shape={shape} validationSchema={validationSchema} />
     </div>
   );
 }

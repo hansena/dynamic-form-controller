@@ -1,8 +1,9 @@
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import * as Yup from "yup";
+import Autocomplete from "./autocomplete";
 
-export const formShape = {
+export const shape = {
   collection: [
     { id: "name", name: "name", label: "Name", Component: TextField },
     { id: "email", name: "email", label: "Email", Component: TextField },
@@ -20,6 +21,12 @@ export const formShape = {
       type: "Password",
       Component: TextField
     }
+    // {
+    //   id: "autocomplete",
+    //   name: "autocomplete",
+    //   label: "autocomplete",
+    //   Component: Autocomplete
+    // }
   ],
   actions: [
     {
@@ -30,6 +37,13 @@ export const formShape = {
       Component: Button
     }
   ]
+};
+
+export const initialValues = {
+  name: "test",
+  email: "email",
+  password: "123",
+  confirmPassword: "123"
 };
 
 export const validationSchema = Yup.object({
