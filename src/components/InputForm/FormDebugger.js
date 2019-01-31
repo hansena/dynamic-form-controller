@@ -2,7 +2,7 @@ import React from "react";
 import { FormikConsumer } from "formik";
 import SyntaxHighlighter from "react-syntax-highlighter";
 
-export const Debug = () => (
+export const FormDebugger = () => (
   <div
     style={{
       margin: "3rem 0",

@@ -1,6 +1,6 @@
 import React from "react";
 import { Form } from "formik";
-import { Debug } from "../formikDebugger/debugger";
+import { FormDebugger } from "./FormDebugger";
 
 export const FormPresentation = props => {
   const {
@@ -26,15 +26,14 @@ export const FormPresentation = props => {
     <Form onSubmit={handleSubmit(values)}>
       {/*Render Data Collection Controls*/}
       {shape.collection.map((control, i) => {
-        const { Component, ...rest } = control;
+        const { Component } = control;
         return (
           <Component
-            {...rest}
-            error={touched[control.name] && Boolean(errors[control.name])}
+            errors={errors}
             fullWidth
-            helperText={touched[control.name] ? errors[control.name] : ""}
             key={i}
             onChange={changeHandler}
+            touched={touched}
           />
         );
       })}
@@ -53,7 +52,8 @@ export const FormPresentation = props => {
           </Component>
         );
       })}
-      {debug && <Debug />}
+      {/*Conditionally Render Form Debugger*/}
+      {debug && <FormDebugger />}
     </Form>
   );
 };

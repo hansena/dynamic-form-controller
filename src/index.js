@@ -1,16 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import InputForm from "./InputForm/InputForm";
-import { shape, validationSchema } from "./configuration.js";
+import { FormInstance } from "./formInstance/FormInstance";
 
 import "./styles.css";
 
 function App() {
-  return (
-    <div className="App">
-      <InputForm shape={shape} validationSchema={validationSchema} />
-    </div>
-  );
+	return (
+		<div className="App">
+			<FormInstance />
+		</div>
+	);
 }
 
 const rootElement = document.getElementById("root");
