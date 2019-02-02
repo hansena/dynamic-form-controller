@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { FormInstance } from "./formInstance/FormInstance";
+import FormInstance from "./formInstance/FormInstance";
 
 import "./styles.css";
 
